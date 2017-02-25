@@ -13,7 +13,7 @@ def ok():
     return "ok", 200
 
 @app.route('/validate', methods=['GET'])
-def validate(cdkey):
+def validate():
     if request.args.get("cdkey") == "test-test-test-test":
         return "ok",200
     return "Im a teapot", 418
