@@ -9,8 +9,14 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def verify():
+def ok():
     return "ok", 200
+
+@app.route('/validate', methods=['GET'])
+def validate(cdkey):
+    if request.args.get("cdkey") == "test-test-test-test":
+        return "ok",200
+    return "Im a teapot", 418
 
 
 @app.route('/', methods=['POST'])
