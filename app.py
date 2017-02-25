@@ -31,7 +31,7 @@ def validate():
     cur.execute("Select 'test-test-test-test';")
     r = cur.fetchone()
     log(r)
-    if request.args.get("cdkey") == r[1]:
+    if request.args.get("cdkey") == r[0]:
         return "ok",200
     return "Im a teapot", 418
 
