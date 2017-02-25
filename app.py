@@ -16,7 +16,7 @@ def ok():
 @app.route('/validate', methods=['GET'])
 def validate():
 
-    urlparse.use_netloc.append("postgres")
+    urlparse.uses_netloc.append("postgres")
     url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
     conn = psycopg2.connect(
